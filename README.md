@@ -1,2 +1,0 @@
-# vms
-Vidit Media Solutions
