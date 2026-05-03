@@ -137,13 +137,13 @@ const AdminGalleryList = ({ onEdit, onAddNew }) => {
                 <div key={idx} className="relative">
                   {item.type === 'video' ? (
                     <video 
-                      src={`http://localhost:5000${url}`}
+                      src={`BASE_URL${url}`}
                       controls
                       className="w-full rounded-lg"
                     />
                   ) : (
                     <img 
-                      src={`http://localhost:5000${url}`}
+                      src={`BASE_URL${url}`}
                       alt={`${item.title} - ${idx + 1}`}
                       className="w-full rounded-lg"
                     />
@@ -342,7 +342,7 @@ const AdminGalleryList = ({ onEdit, onAddNew }) => {
                       {item.type === 'video' ? (
                         <>
                           <video 
-                            src={`http://localhost:5000${thumbnail}`}
+                            src={`BASE_URL${thumbnail}`}
                             className="w-full h-full object-cover"
                             preload="metadata"
                           />
@@ -353,7 +353,7 @@ const AdminGalleryList = ({ onEdit, onAddNew }) => {
                       ) : (
                         <>
                           <img
-                            src={`http://localhost:5000${thumbnail}`}
+                            src={`BASE_URL${thumbnail}`}
                             alt={item.title}
                             className="w-full h-full object-cover"
                           />

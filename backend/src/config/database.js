@@ -2,11 +2,11 @@ const mysql = require('mysql2/promise');
 const bcrypt = require('bcryptjs');
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'vidit_media',
-  port: process.env.DB_PORT || 3306,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
@@ -431,9 +431,9 @@ const connectDB = async (retries = 5) => {
   let connection;
   try {
     console.log('🔌 Attempting to connect to MySQL...');
-    console.log(`📊 Database: ${process.env.DB_NAME || 'vidit_media'}`);
-    console.log(`👤 User: ${process.env.DB_USER || 'root'}`);
-    console.log(`🌐 Host: ${process.env.DB_HOST || 'localhost'}`);
+    console.log(`📊 Database: ${process.env.DB_NAME}`);
+    console.log(`👤 User: ${process.env.DB_USER}`);
+    console.log(`🌐 Host: ${process.env.DB_HOST}`);
     
     connection = await pool.getConnection();
     console.log('✅ MySQL Connected Successfully');
@@ -647,10 +647,10 @@ const connectDB = async (retries = 5) => {
       if (connection) connection.release();
       try {
         const tempConnection = await mysql.createConnection({
-          host: process.env.DB_HOST || 'localhost',
-          user: process.env.DB_USER || 'root',
-          password: process.env.DB_PASSWORD || '',
-          port: process.env.DB_PORT || 3306
+          host: process.env.DB_HOST,
+          user: process.env.DB_USER,
+          password: process.env.DB_PASSWORD,
+          port: process.env.DB_PORT
         });
         await tempConnection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME || 'vidit_media'}`);
         console.log(`✅ Database ${process.env.DB_NAME || 'vidit_media'} created`);
