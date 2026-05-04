@@ -145,8 +145,8 @@ const CompanyGallery = () => {
   const getFullImageUrl = (url) => {
     if (!url) return '';
     if (url.startsWith('http')) return url;
-    if (url.startsWith('/uploads')) return `${API_BASE_URL}${url}`;
-    return `${API_BASE_URL}/${url}`;
+    if (url.startsWith('/uploads')) return `${BASE_URL}${url}`;
+    return `${BASE_URL}/${url}`;
   };
 
   // Extract YouTube ID

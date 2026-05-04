@@ -9,7 +9,7 @@ const emailService = require('./src/utils/emailService');
 
 const PORT = process.env.PORT;
 const HOST = process.env.HOST;
-const FRONTEND_URL = process.env.FRONTEND_URL;
+const FRONTEND_URL = process.env.FRONTEND_URL || process.env.FRONTEND_URLS;
 
 const startServer = async () => {
   console.log('🚀 Starting server...');
